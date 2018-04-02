@@ -1,0 +1,13 @@
+<div class="d-none d-lg-block">
+	<section>
+	<h6>Wichtige Jahre</h6>
+	<div class="d-flex flex-wrap">
+        {{ range .Site.Menus.main }}
+        {{ if and (ne .Name "Blog") (ne .Name "Page") }}
+        <div class="p-1"><a href="{{ .URL }}">{{ .Name }}</a></div>
+        {{ end }}
+        {{ end }}
+    </div>
+    </section>
+
+</div>

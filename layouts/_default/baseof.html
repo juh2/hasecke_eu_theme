@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ if eq .Kind "home" }}
+    <title>{{ .Title }}</title>
+    {{ else }}
+    <title>{{ .Title }} blog | hasecke </title>
+    {{ end }}
+    <link rel="stylesheet" href="/css/gp.css" type="text/css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    {{ block "custom_css" . }}{{ end}}
+    {{ partial "social-header" . }}
+  </head>
+  {{ if .Params.lang }}
+  <body lang="{{ .Params.lang }}" itemscope itemtype="http://schema.org/Article" >
+    {{ else }}
+    <body lang="de">
+      {{ end }}
+      {{ block "navigation" . }}{{ end }}
+      {{ block "main" . }}{{ end}}
+      {{ partial "werbung" }}  
+      {{ partial "footer" }}
+      {{ partial "navbar-burger-js" }}
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<section class="section">
+  <div class="card">
+    <a href="{{ .Permalink}}">
+      {{ if .Resources.GetMatch "intro" }}
+      {{ $preview := .Resources.GetMatch "intro" }}
+      {{ with $preview }}
+      {{ $scaled := .Fill "592x300 smart" }}
+      <img src="{{ $scaled.Permalink }}" alt="" />
+      {{ end }}
+      {{ end }}
+    </a>
+    {{ if .Resources.GetMatch "introsvg" }}
+    {{ $preview := .Resources.GetMatch "introsvg" }}
+    <img src="{{ $preview.Permalink }}" alt="" />
+    {{ end }}
+    <div class="card-content">
+      <h3 class="title is-4">
+	<a href="{{ .Permalink }}">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</a>
+      </h3>
+      <p>
+      {{ .Summary }}
+      </p>
+      <a class="button is-small is-link" href='{{ .Permalink }}'><nobr>{{ .Site.Data.i18n.morelink}} →</nobr></a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<nav class="navbar is-" role="navigation" aria-label="main navigation">
+  <div class="container">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">{{ .Site.Title }}</a>
+  
+  <div class="navbar-burger" data-target="navMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="navbar-menu" id="navMenu">
+    <div class="navbar-start">
+          
+        {{ range .Site.Menus.main }}
+        {{ if and (ne .Name "Blog") (ne .Name "Page") }}
+        <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+        {{ end }}
+      </div>
+    <div class="navbar-stop">
+      <a class="navbar-item" href="/page/impressum">Impressum</a>
+    </div>
+  </div>
+</nav>
