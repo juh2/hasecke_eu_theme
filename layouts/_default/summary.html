@@ -4,7 +4,7 @@
       {{ if .Resources.GetMatch "intro" }}
       {{ $preview := .Resources.GetMatch "intro" }}
       {{ with $preview }}
-      {{ $scaled := .Fill "592x300 smart" }}
+      {{ $scaled := .Fill "592x400 smart" }}
       <img src="{{ $scaled.Permalink }}" alt="" />
       {{ end }}
       {{ end }}

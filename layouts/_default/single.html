@@ -36,6 +36,12 @@
 </section>
 <section class="section">
   <div class="container textbreite">
+    {{ with .Params.abstract }}
+    <div class="notification is-info">
+      <div class="title">Zusammenfassung</div>
+      <div class="content">{{ . | markdownify }}</div>
+    </div>
+    {{ end }}
     <div class="content" itemprop="articleBody">
       {{ .Content }}
     </div>
