@@ -12,18 +12,18 @@
   </div>
 </section>
 <section class="section">
-  <div class="container textbreite">
+  <div class="container">
     <figure>
     {{ if .Resources.GetMatch "intro" }}
     {{ $preview := .Resources.GetMatch "intro" }}
     {{ with $preview }}
-    {{ $scaled := .Resize "640x" }}
+    {{ $scaled := .Fill "1344x800 Gaussian Center" }}
     <img src="{{ $scaled.Permalink }}" alt="" />
     {{ end }}
     {{ end }}
     {{ if .Resources.GetMatch "introsvg" }}
     {{ $preview := .Resources.GetMatch "introsvg" }}
-    <img src="{{ $preview.Permalink }}" alt="" />
+    <div class="has-text-centered"><img src="{{ $preview.Permalink }}" alt="" /></div>
     {{ end }}
         {{ $image := .Resources.GetMatch "intro*" }}
     <figcaption class="has-text-right has-text-grey has-text-weight-light">
@@ -36,7 +36,7 @@
 </section>
 <section class="section">
   <div class="container textbreite">
-    <div class="content" itemprop="articleBody">
+    <div class="content is-medium" itemprop="articleBody">
       {{ .Content }}
     </div>
   </div>

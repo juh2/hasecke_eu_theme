@@ -8,11 +8,12 @@
       <img src="{{ $scaled.Permalink }}" alt="" />
       {{ end }}
       {{ end }}
-    </a>
+    
     {{ if .Resources.GetMatch "introsvg" }}
     {{ $preview := .Resources.GetMatch "introsvg" }}
     <img src="{{ $preview.Permalink }}" alt="" />
     {{ end }}
+    </a>
     <div class="card-content">
       <h3 class="title is-4">
 	<a href="{{ .Permalink }}">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</a>
