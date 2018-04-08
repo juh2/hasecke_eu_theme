@@ -1,30 +1,30 @@
 {{ define "main" }}
 <section class="hero is-fullheight is-success">
-    <div class="hero-head">
+  <div class="hero-head">
     {{ partial "nav" . }}
-</div>
-    <div class="hero-body">
-        <div class="container">
-                <h1 class="title is-size-1 is-size-4-mobile">{{ .Title }}</h1>
-                <h2 class="subtitle">{{ .Site.Params.subtitle }}</h2>
-                <p class="content">{{ .Site.Params.description }}</p>
-                <a class="button" href="{{ .Site.BaseURL }}/post">Zu den Texten</a>
-                <!--
-                <figure class="image">
-                    <img src="/images/GP.png">
-                </figure>
-            -->
-            </div>
-        </div>
+  </div>
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-size-1 is-size-4-mobile">{{ .Title }}</h1>
+      <h2 class="subtitle">{{ .Site.Params.subtitle }}</h2>
+      <p class="content">{{ .Site.Params.description }}</p>
+      <a class="button" href="{{ .Site.BaseURL }}/post">Zu den Texten</a>
+      <!--
+	<figure class="image">
+	<img src="/images/GP.png">
+	</figure>
+      -->
     </div>
+  </div>
+  </div>
 </section>
 
 <section class="section">
-	<div class="container textbreite">
-<h1 id="toc" class="title">{{ .Site.Params.tocname }}</h1>
+  <div class="container textbreite">
+    <h1 id="toc" class="title">{{ .Site.Params.tocname }}</h1>
     {{ range first 12 (where .Data.Pages "Section" "post")}}
-                {{ .Render "summary"}}
-            {{ end }}
-    </div>
+    {{ .Render "summary"}}
+    {{ end }}
+  </div>
 </section>
 {{ end }}

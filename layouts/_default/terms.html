@@ -1,17 +1,17 @@
 {{ define "main" }}
 <section class="hero is-primary">
-    <div class="hero-body">
-   <div class="container">
-    <h5 class="title">{{ .Title }}</h5>
-</div>
-</div>
+  <div class="hero-body">
+    <div class="container">
+      <h5 class="title">{{ .Title }}</h5>
+    </div>
+  </div>
 </section>
 <section class="section">
-    <div class="container" style="max-width: 36rem; margin-right: auto; margin-left: auto">
+  <div class="container" style="max-width: 36rem; margin-right: auto; margin-left: auto">
     {{ $data := .Data }}
     {{ range $key,$value := .Data.Terms.Alphabetical }}
     <h2 class="title"><a href="{{ $value.Name | urlize }}">{{ $value.Name }}</a></h2>
-    
+
     {{ range $value.Pages.ByDate }}
     <a href="{{ .Permalink }}">{{ .Title }}</a><br />
     {{ end }}
