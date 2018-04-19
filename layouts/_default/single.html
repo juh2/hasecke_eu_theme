@@ -13,8 +13,9 @@
 </section>
 <section class="section">
   <div class="container">
-    <figure>
+    
     {{ if .Resources.GetMatch "intro" }}
+    <figure>
     {{ $preview := .Resources.GetMatch "intro" }}
     {{ with $preview }}
     {{ $scaled := .Fill "1344x800 Gaussian Center" }}
@@ -29,9 +30,9 @@
     <figcaption class="has-text-right has-text-grey has-text-weight-light">
       {{ with $image }}
       {{ .Title }}
-      {{ end }}
-    </figcaption>
+      </figcaption>
     </figure>
+      {{ end }}
   </div>
 </section>
 <section class="section">
