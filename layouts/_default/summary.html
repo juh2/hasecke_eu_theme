@@ -8,7 +8,6 @@
       <img src="{{ $scaled.Permalink }}" alt="" />
       {{ end }}
       {{ end }}
-
       {{ if .Resources.GetMatch "introsvg" }}
       {{ $preview := .Resources.GetMatch "introsvg" }}
       <img src="{{ $preview.Permalink }}" alt="" />
@@ -16,12 +15,12 @@
     </a>
     <div class="card-content">
       <h3 class="title is-4">
-	<a href="{{ .Permalink }}">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</a>
+      <a href="{{ .Permalink }}">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</a>
       </h3>
       <p>
-      {{ .Summary }}
+        {{ .Summary }}
       </p>
-      <a class="button is-small is-link" href='{{ .Permalink }}'><nobr>{{ .Site.Data.i18n.morelink}} →</nobr></a>
+      <a class="button is-small is-link" href="{{ .Permalink }}"><nobr>{{ .Site.Data.i18n.morelink}} →</nobr></a>
     </div>
   </div>
 </section>

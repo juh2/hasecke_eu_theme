@@ -1,6 +1,6 @@
 {{ define "main" }}
 <section class="hero is-primary is-bold">
-  <div class=hero-head>
+  <div class="hero-head">
     {{ partial "nav" . }}
   </div>
   <div class="hero-body">
@@ -9,13 +9,12 @@
       <p itemprop="description" class="subtitle">{{ .Description }}</p>
     </div>
   </div>
-  </div>
 </section>
 <section class="section">
-  <div class="container">
-    
-    {{ if .Resources.GetMatch "intro" }}
-    <figure>
+<div class="container">
+  
+  {{ if .Resources.GetMatch "intro" }}
+  <figure>
     {{ $preview := .Resources.GetMatch "intro" }}
     {{ with $preview }}
     {{ $scaled := .Fill "1344x800 Gaussian Center" }}
@@ -26,33 +25,33 @@
     {{ $preview := .Resources.GetMatch "introsvg" }}
     <div class="has-text-centered"><img src="{{ $preview.Permalink }}" alt="" /></div>
     {{ end }}
-        {{ $image := .Resources.GetMatch "intro*" }}
+    {{ $image := .Resources.GetMatch "intro*" }}
     <figcaption class="has-text-right has-text-grey has-text-weight-light">
-      {{ with $image }}
-      {{ .Title }}
-      </figcaption>
-    </figure>
-      {{ end }}
-  </div>
+    {{ with $image }}
+    {{ .Title }}
+    </figcaption>
+  </figure>
+  {{ end }}
+</div>
 </section>
 <section class="section">
-  <div class="container textbreite">
-    {{ with .Params.abstract }}
-    <div class="notification is-info">
-      <div class="title">Zusammenfassung</div>
-      <div class="content">{{ . | markdownify }}</div>
-    </div>
-    {{ end }}
-    <div class="content is-medium" itemprop="articleBody">
-      {{ .Content }}
-    </div>
+<div class="container textbreite">
+  {{ with .Params.abstract }}
+  <div class="notification is-info">
+    <div class="title">Zusammenfassung</div>
+    <div class="content">{{ . | markdownify }}</div>
   </div>
+  {{ end }}
+  <div class="content is-medium" itemprop="articleBody">
+    {{ .Content }}
+  </div>
+</div>
 </section>
 <section class="footer">
-  <div class="container textbreite">
-    {{ range .Params.tags }}
-    <a class="button is-small" href="/tags/{{ . | urlize }}"><i class="fa fa-tag"></i>&nbsp;{{ . }}</a>
-    {{ end }}
-  </div>
+<div class="container textbreite">
+  {{ range .Params.tags }}
+  <a class="button is-small" href="/tags/{{ . | urlize }}"><i class="fa fa-tag"></i>&nbsp;{{ . }}</a>
+  {{ end }}
+</div>
 </section>
 {{ end }}

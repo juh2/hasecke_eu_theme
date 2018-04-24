@@ -8,8 +8,9 @@
     {{ else }}
     <title>{{ .Title }} blog | hasecke </title>
     {{ end }}
-    <link rel="stylesheet" href="/css/gp.css" type="text/css">
-    <!--    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>-->
+    <link rel="stylesheet" href="/css/gp.css" type="text/css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+<!--    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>-->
     {{ block "custom_css" . }}{{ end}}
     {{ partial "social-header" . }}
   </head>
