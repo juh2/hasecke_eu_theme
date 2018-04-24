@@ -1,6 +1,5 @@
 {{ define "main" }}
-<section class="hero is-fullheight is-primary" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/images/20170124_163632-korr.jpg);
-background-position:center bottom;">
+<section class="hero is-fullheight is-primary" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/images/20170124_163632-korr.jpg); background-position:center bottom;">
   <div class="hero-head">
     {{ partial "nav" . }}
   </div>
@@ -10,13 +9,12 @@ background-position:center bottom;">
       <h2 class="subtitle">{{ .Site.Params.subtitle }}</h2>
       <p class="content">{{ .Site.Params.description }}</p>
       <a class="button" href="{{ .Site.BaseURL }}/post">Zu den Texten</a>
-      <!--
-	<figure class="image">
-	<img src="/images/GP.png">
-	</figure>
-      -->
     </div>
   </div>
+  <div class="hero-foot has-text-centered">
+    <p class="title">
+    <a href="#toc"><i class="fa fa-angle-double-down"></i></a>
+  </p>
   </div>
 </section>
 
