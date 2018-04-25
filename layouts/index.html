@@ -2,18 +2,23 @@
 <section class="hero is-fullheight is-primary" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/images/20170124_163632-korr.jpg); background-position:center bottom;">
   <div class="hero-head">
     {{ partial "nav" . }}
+    <div class="container is-hidden-mobile">
+      <div class="is-pulled-right">
+        <p class="subtitle has-text-right">{{ .Site.Params.description | safeHTML }}</p>
+      </div>
+    </div>
   </div>
   <div class="hero-body">
     <div class="container">
       <h1 class="title is-size-1 is-size-4-mobile">{{ .Title }}</h1>
-      <h2 class="subtitle">{{ .Site.Params.subtitle }}</h2>
-      <p class="content">{{ .Site.Params.description }}</p>
-      <a class="button" href="{{ .Site.BaseURL }}/post">Zu den Texten</a>
+      <h2 class="subtitle">{{ .Site.Params.headline }}</h2>
+<!--      <p class="subtitle">{{ .Site.Params.description }}</p>-->
+      
     </div>
   </div>
   <div class="hero-foot has-text-centered">
-    <p class="title">
-    <a href="#toc"><i class="fa fa-angle-double-down"></i></a>
+    <p class="title is-1">
+    <a class="button" href="{{ .Site.BaseURL }}/post">Scroll oder klick.</a>
   </p>
   </div>
 </section>
