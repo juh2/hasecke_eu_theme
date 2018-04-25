@@ -29,6 +29,9 @@
     {{ range first 12 (where .Data.Pages "Section" "post")}}
     {{ .Render "summary"}}
     {{ end }}
+    <div class="has-text-centered">
+    <a class="button is-link" href="{{ .Site.BaseURL }}/post">Alle Texte</a>
+    </div>
   </div>
 </section>
 {{ end }}
