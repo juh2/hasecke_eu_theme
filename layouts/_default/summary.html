@@ -1,10 +1,11 @@
 <section class="section">
   <div class="card">
+    <div class="card-image">
     <a href="{{ .Permalink}}">
       {{ if .Resources.GetMatch "intro" }}
       {{ $preview := .Resources.GetMatch "intro" }}
       {{ with $preview }}
-      {{ $scaled := .Fill "592x400 smart" }}
+      {{ $scaled := .Fill "688x400 smart" }}
       <img src="{{ $scaled.Permalink }}" alt="" />
       {{ end }}
       {{ end }}
@@ -13,6 +14,7 @@
       <img src="{{ $preview.Permalink }}" alt="" />
       {{ end }}
     </a>
+    </div>
     <div class="card-content">
       <h3 class="title is-4">
       <a href="{{ .Permalink }}">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</a>
