@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
     {{ if eq .Kind "home" }}
     <title>{{ .Title }}</title>
     {{ else }}
@@ -10,6 +11,7 @@
     {{ end }}
     <link rel="stylesheet" href="/css/gp.css" type="text/css" />
     <link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
 <!--    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>-->
     {{ block "custom_css" . }}{{ end}}
     {{ partial "social-header" . }}
