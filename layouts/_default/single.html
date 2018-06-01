@@ -1,5 +1,12 @@
 {{ define "main" }}
-<section class="hero is-primary is-bold">
+{{ if .Resources.GetMatch "intro" }}
+    {{ $preview := .Resources.GetMatch "intro" }}
+    {{ with $preview }}
+    {{ $scaled := .Fill "1668x705 Gaussian Center" }}
+<section class="hero is-large is-primary"
+style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{ $scaled.Permalink }}); background-position:center bottom;">
+  {{ end }}
+  {{ end }}
   <div class="hero-head">
     {{ partial "nav" . }}
   </div>
@@ -11,8 +18,8 @@
   </div>
 </section>
 <section class="section">
+<!--  
 <div class="container">
-  
   {{ if .Resources.GetMatch "intro" }}
   <figure>
     {{ $preview := .Resources.GetMatch "intro" }}
@@ -31,8 +38,9 @@
     {{ .Title }}
     </figcaption>
   </figure>
-  {{ end }}
+  {{ end }} 
 </div>
+-->
 </section>
 <section class="section">
 <div class="container textbreite">
